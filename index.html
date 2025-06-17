@@ -1,17 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SyrioFair - PNG Marketplace</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <title>SyrioFair - PNG Offline Marketplace</title>
+    <style>
+        body {
+            background-color: #111; /* dark PNG tribal background */
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #FFD700; /* Gold PNG color */
+        }
+        p {
+            font-size: 18px;
+            color: #ccc;
+        }
+        .logo {
+            width: 200px;
+            border: 5px solid #FFD700;
+            border-radius: 20px;
+            margin: 20px auto;
+        }
+        .button {
+            background-color: #FF4500; /* Red PNG clay style */
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px #000;
+        }
+        .button:hover {
+            background-color: #FF6347;
+        }
+    </style>
 </head>
 <body>
-  <h1>Welcome to SyrioFair!</h1>
-  <p>This is the first PNG Offline Marketplace App.</p>
-  <button onclick="addProduct()">Add Product</button>
-  <ul id="productList"></ul>
+    <h1>Welcome to SyrioFair!</h1>
+    <p>This is the first PNG Offline Marketplace App.</p>
+    
+    <!-- PNG Logo -->
+    <img src="1750149904638.jpg" alt="SyrioFair Logo" class="logo">
 
-  <script src="script.js"></script>
+    <!-- PNG Themed Buttons -->
+    <div>
+        <button class="button">Buy</button>
+        <button class="button">Sell</button>
+        <button class="button">Add Product</button>
+    </div>
 </body>
 </html>
-<img src="1750149904638.jpg" alt="SyrioFair Logo" width="250">
