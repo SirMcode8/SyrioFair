@@ -1,2 +1,2 @@
 # SyrioFair
-Offline PNG Marketplace App built with HTML,CSS,JS
+Offline PNG Marketplace App
