@@ -1,29 +1,36 @@
 function addProduct() {
-  const name = prompt("Enter product name:");
-  if (name) {
-    const list = document.getElementById("productList");
-    const item = document.createElement("li");
-    item.textContent = name;
-    list.appendChild(item);
-    saveData();
-  }
+    const product = prompt("Enter product name:");
+    if(product){
+        const productsDiv = document.getElementById('products');
+        const productItem = document.createElement('div');
+        productItem.textContent = `Product: ${product}`;
+        productsDiv.appendChild(productItem);
+    }
 }
 
-function saveData() {
-  const listItems = document.querySelectorAll("#productList li");
-  const products = [];
-  listItems.forEach(item => products.push(item.textContent));
-  localStorage.setItem("products", JSON.stringify(products));
+// Simulated Safe Payment System
+
+function holdPayment() {
+    localStorage.setItem('paymentStatus', 'Held');
+    document.getElementById('status').innerText = "Payment is securely held.";
 }
 
-function loadData() {
-  const products = JSON.parse(localStorage.getItem("products")) || [];
-  const list = document.getElementById("productList");
-  products.forEach(product => {
-    const item = document.createElement("li");
-    item.textContent = product;
-    list.appendChild(item);
-  });
+function releasePayment() {
+    const status = localStorage.getItem('paymentStatus');
+    if(status === 'Held') {
+        localStorage.setItem('paymentStatus', 'Released');
+        document.getElementById('status').innerText = "Payment released to seller.";
+    } else {
+        document.getElementById('status').innerText = "No payment to release.";
+    }
 }
 
-window.onload = loadData;
+function cancelPayment() {
+    const status = localStorage.getItem('paymentStatus');
+    if(status === 'Held') {
+        localStorage.setItem('paymentStatus', 'Cancelled');
+        document.getElementById('status').innerText = "Payment refunded to buyer.";
+    } else {
+        document.getElementById('status').innerText = "No payment to cancel.";
+    }
+}
